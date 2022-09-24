@@ -26,9 +26,15 @@ userSchema.statics.signup = async function(email, password) {
         throw Error('An email and password is needed to create an account');
     }
 
-    // check that a real email was sent in the request
+    // check that a properly formatted email was sent in the request
     if (!validator.isEmail(email)) {
         throw Error('The entered email is not a valid email');
+    }
+
+    // check that the password is a strong password
+    // by default, a strong password is min 8 characters, at least 1 lower and upper case, at least 1 number and symbol
+    if (!validator.isStrongPassword(password)) {
+        throw Error('Password must be minimum 8 characters long, with at least 1 lowercase letter, 1 uppercase letter, 1 number, and 1 symbol');
     }
 
     // check if the email has already been used
