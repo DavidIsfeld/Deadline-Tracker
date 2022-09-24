@@ -13,7 +13,23 @@ const createToken = (_id) => {
 
 // login user
 const loginUser = async (req, res) => {
-    console.log('login user');
+    // request will be sent in json format thanks to the express.json() middleware in server.js
+    // get the email and password used from the request
+    const { email, password } = req.body;
+
+    try {
+        // attempt to log in the user
+        const user = await User.login(email, password);
+
+        // json web tokens are used to verify that the user is logged in
+        // create a token using the user's id given to them by mongodb
+        const token = createToken(user._id);
+
+        // send a response back to the user containing the token and the user's email
+        res.status(200).json({email, token});
+    } catch (error) {
+        res.status(400).json({error: error.message});
+    }
 };
 
 // signup user

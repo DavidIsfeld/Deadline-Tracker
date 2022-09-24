@@ -55,6 +55,31 @@ userSchema.statics.signup = async function(email, password) {
 
     // create a user in the database and return information about said user
     const user = this.create({ email, password: hash });
+    
+    return user;
+};
+
+// static login method to login users
+userSchema.statics.login = async function(email, password) {
+    // check that an email and password were sent with the request
+    if (!email || !password) {
+        throw Error('An email and password is needed to log into an account');
+    }
+
+    // check if the user's account exists in the database and get the user if it does
+    const user = await this.findOne({ email });
+
+    if (!user) {
+        throw Error('An account under this email does not exist');
+    }
+
+    // check that the entered password matches the password stored in the database
+    const passwordMatch = await bcrypt.compare(password, user.password);
+
+    if (!passwordMatch) {
+        throw Error('Incorrect password entered');
+    }
+
     return user;
 };
 
