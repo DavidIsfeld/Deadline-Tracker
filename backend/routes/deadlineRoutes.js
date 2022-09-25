@@ -1,7 +1,11 @@
-// this file routes requests related to user's deadline to their appropriate controller functions
+// this file routes requests related to user's deadlines to their appropriate controller functions
 
 const express = require('express');
 const requireAuthentication = require('../middleware/requireAuthentication');
+const {
+    getAllDeadlines,
+    createNewDeadline
+} = require('../controllers/deadlineController');
 
 // get express router
 const router = express.Router();
@@ -9,9 +13,10 @@ const router = express.Router();
 // before any information is accessed, make sure that the user making the request has a valid token
 router.use(requireAuthentication);
 
-// placeholder get request handler
-router.get('/', (req, res) => {
-    res.status(200).json({mssg: 'Made it past authentication'});
-});
+// this handles a request to get all of a user's deadlines
+router.get('/', getAllDeadlines);
+
+// this handles a request to create a new deadline
+router.post('/', createNewDeadline)
 
 module.exports = router;

@@ -15,7 +15,11 @@ const requireAuthentication = async (req, res, next) => {
 
     // verify that the token sent matches the token generated for this user
     try {
-        jwt.verify(token, process.env.SECRET);
+        // at the same time as verifying we get the user's id out of the token, as it is created with the user's id
+        const {_id} = jwt.verify(token, process.env.SECRET);
+
+        // get the user's id and attach it to the request so we can use it later to view only a specific user's deadlines
+        req.user = await User.findOne({_id}).select('_id');
         next();
     } catch (error) {
         console.log(error);
