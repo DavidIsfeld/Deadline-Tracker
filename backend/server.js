@@ -6,6 +6,7 @@ require('dotenv').config();
 const express = require('express');
 const { default: mongoose } = require('mongoose');
 const userRoutes = require('./routes/userRoutes');
+const deadlineRoutes = require('./routes/deadlineRoutes');
 
 // express app
 const app = express();
@@ -15,6 +16,7 @@ app.use(express.json());
 
 // routes
 app.use('/api/user', userRoutes);
+app.use('/api/deadline', deadlineRoutes);
 
 // connect to the database before the server starts listening to a certain port
 mongoose.connect(process.env.MONG_URI)
