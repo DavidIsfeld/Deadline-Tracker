@@ -6,7 +6,8 @@ const {
     getAllDeadlines,
     createNewDeadline,
     getSingleDeadline,
-    deleteDeadline
+    deleteDeadline,
+    updateDeadline
 } = require('../controllers/deadlineController');
 
 // get express router
@@ -26,5 +27,8 @@ router.post('/', createNewDeadline);
 
 // this handles a request to delete a deadline
 router.delete('/:id', deleteDeadline);
+
+// this handles a request to update a deadline
+router.patch('/:id', updateDeadline);
 
 module.exports = router;

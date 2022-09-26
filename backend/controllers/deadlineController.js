@@ -88,9 +88,34 @@ const deleteDeadline = async (req, res) => {
     res.status(200).json(deadline);
 };
 
+// update a deadline
+const updateDeadline = async (req, res) => {
+    // get the id of the deadline we are trying to get from the request
+    const {id} = req.params;
+
+    // check that the id is in a valid format
+    if (!mongoose.Types.ObjectId.isValid(id)) {
+        return res.status(404).json({error: 'No such deadline exists'});
+    }
+
+    // attempt to find and update the deadline using the id
+    // also make sure we are only looking at deadlines that belong to this user
+    const user_id = req.user._id;
+    const deadline = await Deadline.findOneAndUpdate({user_id: req.user._id, _id: id}, {...req.body});
+
+    // check if the deadline was actually found
+    if (!deadline) {
+        return res.status(404).json({error: 'No such deadline exists'});
+    }
+
+    // send back the deadline in json format
+    res.status(200).json(deadline);
+};
+
 module.exports = {
     getAllDeadlines,
     createNewDeadline,
     getSingleDeadline,
-    deleteDeadline
+    deleteDeadline,
+    updateDeadline
 };
