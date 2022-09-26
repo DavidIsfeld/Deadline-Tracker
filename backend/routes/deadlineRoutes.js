@@ -4,7 +4,8 @@ const express = require('express');
 const requireAuthentication = require('../middleware/requireAuthentication');
 const {
     getAllDeadlines,
-    createNewDeadline
+    createNewDeadline,
+    getSingleDeadline
 } = require('../controllers/deadlineController');
 
 // get express router
@@ -16,7 +17,10 @@ router.use(requireAuthentication);
 // this handles a request to get all of a user's deadlines
 router.get('/', getAllDeadlines);
 
+// this handles a request to get a single deadline
+router.get('/:id', getSingleDeadline);
+
 // this handles a request to create a new deadline
-router.post('/', createNewDeadline)
+router.post('/', createNewDeadline);
 
 module.exports = router;
