@@ -5,7 +5,8 @@ const requireAuthentication = require('../middleware/requireAuthentication');
 const {
     getAllDeadlines,
     createNewDeadline,
-    getSingleDeadline
+    getSingleDeadline,
+    deleteDeadline
 } = require('../controllers/deadlineController');
 
 // get express router
@@ -22,5 +23,8 @@ router.get('/:id', getSingleDeadline);
 
 // this handles a request to create a new deadline
 router.post('/', createNewDeadline);
+
+// this handles a request to delete a deadline
+router.delete('/:id', deleteDeadline);
 
 module.exports = router;
