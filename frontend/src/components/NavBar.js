@@ -11,6 +11,7 @@ const NavBar = () => {
     return ( 
         <nav>
             <div>
+                <Link to='/signup'>Signup</Link>
                 <Link to='/login'>Login</Link>
             </div>
             <div>

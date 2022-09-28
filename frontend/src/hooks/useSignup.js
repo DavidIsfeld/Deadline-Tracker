@@ -1,22 +1,22 @@
-// this hook will contain the logic used to log in a user in from the frontend
+// this hook will contain the logic used to sign up a user in from the frontend
 
 import { useState } from 'react';
 import { useAuthContext } from './useAuthContext';
 
-export const useLogin = () => {
+export const useSignup = () => {
     // error and isLoading will be used to display errors to the user and make sure that they cannot submit the form again while they
-    // are being logged in.
+    // are being signed up.
     const [error, setError] = useState(null);
     const [isLoading, setIsLoading] = useState(null);
     const { dispatch } = useAuthContext();
 
-    const login = async (email, password) => {
+    const signup = async (email, password) => {
         setIsLoading(true);
-        // set error to null in case there was an error previously and the user is trying to log in again
+        // set error to null in case there was an error previously and the user is trying to sign up again
         setError(null);
 
-        // send a post request to the login api containing the entered in email and password
-        const response = await fetch('/api/user/login', {
+        // send a post request to the signup api containing the entered in email and password
+        const response = await fetch('/api/user/signup', {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({email, password})
@@ -40,9 +40,9 @@ export const useLogin = () => {
             setIsLoading(false);
 
             // for testing
-            console.log('logged in');
+            console.log('signed up');
         }
     };
 
-    return {login, isLoading, error};
+    return {signup, isLoading, error};
 };

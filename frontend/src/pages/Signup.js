@@ -1,22 +1,22 @@
-// this file contains the login page, which consists of a form the user fills in
+// this file contains the sign up page, which consists of a form the user fills in
 
 import { useState } from 'react';
-import { useLogin } from '../hooks/useLogin';
+import { useSignup } from '../hooks/useSignup';
 
-const Login = () => {
+const Signup = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const {login, error, isLoading} = useLogin();
+    const {signup, error, isLoading} = useSignup();
 
     const handleSubmit = async (e) => {
         // prevent the default submit handling so that the page is not refreshed
         e.preventDefault();
 
-        await login(email, password);
+        await signup(email, password);
     };
 
     return ( 
-        <form className="login" onSubmit={handleSubmit}>
+        <form className="signup" onSubmit={handleSubmit}>
             <h2>Log In</h2>
 
             <label>Email:</label>
@@ -33,10 +33,10 @@ const Login = () => {
                 value={password}
             />
 
-            <button disabled={isLoading}>Log In</button>
+            <button disabled={isLoading}>Sign Up</button>
             {error && <div className="error">{error}</div>}
         </form>
      );
 };
 
-export default Login;
+export default Signup;
