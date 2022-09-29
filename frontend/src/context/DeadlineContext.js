@@ -8,6 +8,10 @@ export const deadlineReducer = (state, action) => {
             return {
                 deadlines: action.payload
             }
+        case 'CREATE_DEADLINE':
+            return {
+                deadlines: [action.payload, ...state.deadlines]
+            }
         default:
             return state;
     }

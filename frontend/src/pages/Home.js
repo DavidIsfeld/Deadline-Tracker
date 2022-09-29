@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import { useDeadlineContext } from '../hooks/useDeadlineContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 import DeadlineDetails from '../components/DeadlineDetails';
+import DeadlineForm from '../components/DeadlineForm';
 
 const Home = () => {
     const { deadlines, dispatch } = useDeadlineContext();
@@ -41,6 +42,7 @@ const Home = () => {
                     <DeadlineDetails key={deadline._id} deadline={deadline} />
                 ))}
             </div>
+            <DeadlineForm />
         </div>
      );
 };

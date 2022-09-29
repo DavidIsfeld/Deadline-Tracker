@@ -1,3 +1,5 @@
+// this file displays the information contained within each deadline
+
 import { useDeadlineContext } from '../hooks/useDeadlineContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';

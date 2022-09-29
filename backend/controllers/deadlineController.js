@@ -49,9 +49,11 @@ const createNewDeadline = async (req, res) => {
 
     // add the new deadline to the database
     try {
-        // dates will be stored in the json file as strings in the YYYY/MM/DD format
+        // dates will be stored in the json file as strings in the YYYY-MM-DD format as this is how they are stored from the html form.
+        // before parsing the date replace the "-" with "/"
+        const preparedDate = date.replaceAll('-', '/');
         // try to parse the date from the json file
-        const formattedDate = dateAndTime.parse(date, 'YYYY/MM/DD');
+        const formattedDate = dateAndTime.parse(preparedDate, 'YYYY/MM/DD');
 
         // get the user's id as we will need it to create a new deadline
         const user_id = req.user._id;
