@@ -11,6 +11,8 @@ const DeadlineForm = () => {
     const [description, setDescription] = useState('An upcoming deadline.');
     const { dispatch } = useDeadlineContext();
     const { user } = useAuthContext();
+    // use this state to display errors
+    const [error, setError] = useState(null);
 
 
     // this function handles a submission after the form is filled out
@@ -20,6 +22,7 @@ const DeadlineForm = () => {
 
         // check if the user is actually logged in before submitting
         if (!user) {
+            setError('You must be logged in to create a deadline');
             return;
         }
 
@@ -38,15 +41,16 @@ const DeadlineForm = () => {
 
         const json = await response.json();
 
+        if (!response.ok) {
+            setError(json.error);
+        }
+
         if (response.ok) {
             // since our POST request worked, we reset the form so another deadline can be created
             setTitle('');
             setDate('');
             setDescription("An upcoming deadline");
 
-            console.log(title);
-            console.log(description);
-            console.log(date);
             // set the deadline context to include the new deadline
             dispatch({ type: 'CREATE_DEADLINE', payload: json });
         }
@@ -76,6 +80,7 @@ const DeadlineForm = () => {
             />
 
             <button>Add Deadline</button>
+            {error && <div>{error}</div>}
         </form>
      );
 }
