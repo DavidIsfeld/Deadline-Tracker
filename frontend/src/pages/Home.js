@@ -3,6 +3,7 @@
 import { useEffect } from 'react';
 import { useDeadlineContext } from '../hooks/useDeadlineContext';
 import { useAuthContext } from '../hooks/useAuthContext';
+import DeadlineDetails from '../components/DeadlineDetails';
 
 const Home = () => {
     const { deadlines, dispatch } = useDeadlineContext();
@@ -37,7 +38,7 @@ const Home = () => {
         <div className="home">
             <div className="deadlines">
                 {deadlines && deadlines.map((deadline) => (
-                    <h1 key={deadline._id}>{deadline.title}</h1>
+                    <DeadlineDetails key={deadline._id} deadline={deadline} />
                 ))}
             </div>
         </div>
