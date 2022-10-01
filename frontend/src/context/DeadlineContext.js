@@ -12,6 +12,10 @@ export const deadlineReducer = (state, action) => {
             return {
                 deadlines: [action.payload, ...state.deadlines]
             }
+        case 'DELETE_DEADLINE':
+            return {
+                deadlines: state.deadlines.filter(d => d._id !== action.payload._id)
+            }
         default:
             return state;
     }
