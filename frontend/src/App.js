@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import NavBar from './components/NavBar';
+import UpdateDeadline from './pages/UpdateDeadline';
 
 function App() {
   return (
@@ -22,6 +23,10 @@ function App() {
             <Route 
               path="/signup"
               element={ <Signup /> }
+            />
+            <Route 
+              path="/update"
+              element={ <UpdateDeadline /> }
             />
           </Routes>
         </div>

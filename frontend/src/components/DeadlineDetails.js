@@ -5,7 +5,6 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import formatDistanceToNow from 'date-fns/formatDistanceToNow';
 import format from 'date-fns/format';
 import { Link } from 'react-router-dom';
-import UpdateDeadline from '../components/UpdateDeadline';
 
 const DeadlineDetails = ( { deadline } ) => {
     const { dispatch } = useDeadlineContext();
@@ -42,7 +41,7 @@ const DeadlineDetails = ( { deadline } ) => {
             <p>Time Until Deadline: {formatDistanceToNow(new Date(deadline.date), { addSuffix: true })}</p>
             <p>Date Deadline Was Created: {formatDistanceToNow(new Date(deadline.createdAt), { addSuffix: true })}</p>
             <button onClick={handleDelete}>delete</button>
-            <UpdateDeadline oldDeadline={deadline} />
+            <Link to="/update" state={{ oldDeadline: deadline}}>Update Deadline</Link>
         </div>
      );
 }

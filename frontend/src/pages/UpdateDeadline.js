@@ -1,12 +1,15 @@
 // This component deals with updating a single deadline
 
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { useDeadlineContext } from '../hooks/useDeadlineContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 
-const UpdateDeadline = ({ oldDeadline }) => {
+const UpdateDeadline = () => {
     const { dispatch } = useDeadlineContext();
     const { user } = useAuthContext();
+    const location = useLocation();
+    const { oldDeadline } = location.state;
 
     // keep track of all relevant details with states
     const [title, setTitle] = useState('');
@@ -68,7 +71,7 @@ const UpdateDeadline = ({ oldDeadline }) => {
             // since our PATCH request worked, we reset the form in case another update needs to be made
             setTitle('');
             setDate('');
-            setDescription("An upcoming deadline");
+            setDescription("");
 
             // delete the old deadline from the local context
             dispatch({ type: 'DELETE_DEADLINE', payload: json });
