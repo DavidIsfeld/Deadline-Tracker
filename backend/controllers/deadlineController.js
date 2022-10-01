@@ -100,18 +100,44 @@ const updateDeadline = async (req, res) => {
         return res.status(404).json({error: 'No such deadline exists'});
     }
 
-    // attempt to find and update the deadline using the id
-    // also make sure we are only looking at deadlines that belong to this user
-    const user_id = req.user._id;
-    const deadline = await Deadline.findOneAndUpdate({user_id: req.user._id, _id: id}, {...req.body});
+    try {
+        // see which properties have been requested to be changed
+        // add them to the updateInstructions object if they are present in the request
+        let updateInstructions = {};
 
-    // check if the deadline was actually found
-    if (!deadline) {
-        return res.status(404).json({error: 'No such deadline exists'});
+        if (req.body.hasOwnProperty("title")) {
+            updateInstructions['title'] = req.body.title;
+        }
+
+        // if the request to update the deadline contains a date it must be formatted
+        // first check if it contains a date
+        if (req.body.hasOwnProperty("date")) {
+            const { date } = req.body
+            // format the date
+            const preparedDate = date.replaceAll('-', '/');
+            const formattedDate = dateAndTime.parse(preparedDate, 'YYYY/MM/DD');
+            updateInstructions['date'] = formattedDate;
+        }
+
+        if (req.body.hasOwnProperty("description")) {
+            updateInstructions['description'] = req.body.description;
+        }
+
+        // attempt to find and update the deadline using the id
+        // also make sure we are only looking at deadlines that belong to this user
+        const user_id = req.user._id;
+        const deadline = await Deadline.findOneAndUpdate({user_id: req.user._id, _id: id}, updateInstructions);
+
+        // check if the deadline was actually found
+        if (!deadline) {
+            return res.status(404).json({error: 'No such deadline exists'});
+        }
+
+        // send back the deadline in json format
+        res.status(200).json(deadline);
+    } catch (error) {
+        res.status(400).json({error: error.message});
     }
-
-    // send back the deadline in json format
-    res.status(200).json(deadline);
 };
 
 module.exports = {
