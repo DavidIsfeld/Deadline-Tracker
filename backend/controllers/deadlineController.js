@@ -10,7 +10,7 @@ const getAllDeadlines = async (req, res) => {
     const user_id = req.user._id;
     
     // use the user's id to get only the deadlines belonging to that user and send them back in json format
-    const deadlines = await Deadline.find({ user_id });
+    const deadlines = await Deadline.find({ user_id }).sort({date: 1});
     res.status(200).json(deadlines);
 };
 
