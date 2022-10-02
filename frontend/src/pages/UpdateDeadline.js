@@ -1,7 +1,7 @@
 // This component deals with updating a single deadline
 
 import { useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useDeadlineContext } from '../hooks/useDeadlineContext';
 import { useAuthContext } from '../hooks/useAuthContext';
 
@@ -10,6 +10,7 @@ const UpdateDeadline = () => {
     const { user } = useAuthContext();
     const location = useLocation();
     const { oldDeadline } = location.state;
+    const navigate = useNavigate();
 
     // keep track of all relevant details with states
     const [title, setTitle] = useState('');
@@ -19,7 +20,7 @@ const UpdateDeadline = () => {
     const [error, setError] = useState(null);
 
     // this function handles a submission after the form is filled out
-    const handleSubmit = async (e) => {
+    const handleSubmit = async function(e) {
         // prevent default so that page does not refresh after submitting form
         e.preventDefault();
 
@@ -72,9 +73,13 @@ const UpdateDeadline = () => {
             setTitle('');
             setDate('');
             setDescription("");
+            setError(null);
 
             // delete the old deadline from the local context
             dispatch({ type: 'DELETE_DEADLINE', payload: json });
+
+            // send user back to homepage after updating
+            navigate('/');
         }
     };
 
