@@ -46,13 +46,12 @@ const DeadlineForm = () => {
         }
 
         if (response.ok) {
-            // since our POST request worked, we reset the form so another deadline can be created
-            setTitle('');
-            setDate('');
-            setDescription("An upcoming deadline");
 
             // set the deadline context to include the new deadline
             dispatch({ type: 'CREATE_DEADLINE', payload: json });
+
+            // refresh the page
+            window.location.reload();
         }
     };
     

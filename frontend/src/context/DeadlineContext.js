@@ -10,7 +10,7 @@ export const deadlineReducer = (state, action) => {
             }
         case 'CREATE_DEADLINE':
             return {
-                deadlines: [action.payload, ...state.deadlines]
+                deadlines: [...state.deadlines, action.payload]
             }
         case 'DELETE_DEADLINE':
             return {
