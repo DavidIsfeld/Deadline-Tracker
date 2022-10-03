@@ -15,5 +15,63 @@ body {
   grid-template-columns: auto auto auto auto;
 }
 
-/* deadline details */
+/* change number of columns to 3 at 1450 pixels */
+@media screen and (max-width: 1450px) {
+  .deadlines {
+    grid-template-columns: auto auto auto;
+  }
+}
 
+/* change number of columns to 2 at 1100 pixels */
+@media screen and (max-width: 1100px) {
+  .deadlines {
+    grid-template-columns: auto auto;
+  }
+}
+
+/* change number of columns to 1 at 700 pixels */
+@media screen and (max-width: 700px) {
+  .deadlines {
+    grid-template-columns: auto;
+  }
+}
+
+/* deadline details */
+.deadline-details {
+  padding: 1.1em;
+}
+
+#details-time-left {
+  color: rgb(224, 38, 38);
+}
+
+#details-link {
+  text-decoration: none;
+  color: black;
+  padding: 2px 6px;
+  background-color: rgb(228, 213, 213);
+  border-top: 1px solid rgb(34, 32, 32);
+  border-right: 1px solid rgb(34, 32, 32);
+  border-left: 1px solid rgb(34, 32, 32);
+  border-bottom: 1px solid rgb(34, 32, 32);
+}
+
+#details-link:hover {
+  background-color: rgb(198, 183, 183);
+}
+
+#details-button {
+  text-decoration: none;
+  color: black;
+  font-size: 1.01em;
+  padding: 2px 6px;
+  background-color: rgb(228, 213, 213);
+  border-top: 1px solid rgb(34, 32, 32);
+  border-right: 1px solid rgb(34, 32, 32);
+  border-left: 1px solid rgb(34, 32, 32);
+  border-bottom: 1px solid rgb(34, 32, 32);
+}
+
+#details-button:hover {
+  background-color: rgb(198, 183, 183);
+}

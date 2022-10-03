@@ -35,13 +35,15 @@ const DeadlineDetails = ( { deadline } ) => {
 
     return ( 
         <div className="deadline-details">
-            <h3>{deadline.title}</h3>
-            <p>Description:<br />{deadline.description}</p>
-            <p>Deadline: {format(new Date(deadline.date), 'MMMM d, yyyy')}</p>
-            <p>Time Until Deadline: {formatDistanceToNow(new Date(deadline.date), { addSuffix: true })}</p>
-            <p>Date Deadline Was Created: {formatDistanceToNow(new Date(deadline.createdAt), { addSuffix: true })}</p>
-            <button onClick={handleDelete}>delete</button>
-            <Link to="/update" state={{ oldDeadline: deadline}}>Update Deadline</Link>
+            <h3>Deadline: {deadline.title}</h3>
+            <p><strong>Description:</strong><br />{deadline.description}</p>
+            <p><strong>Deadline: </strong>{format(new Date(deadline.date), 'MMMM d, yyyy')}</p>
+            <p><strong>Time Until Deadline: <span id="details-time-left">{formatDistanceToNow(new Date(deadline.date), { addSuffix: true })}</span></strong></p>
+            <p><strong>Date Deadline Was Created: </strong>{formatDistanceToNow(new Date(deadline.createdAt), { addSuffix: true })}</p>
+            <Link to="/update" state={{ oldDeadline: deadline}} id="details-link">Update Deadline</Link>
+            <br />
+            <br />
+            <button onClick={handleDelete} id="details-button">Delete Deadline</button>
         </div>
      );
 }
