@@ -13,18 +13,17 @@ const NavBar = () => {
     return ( 
         <header>
             <div className="navbar">
-                <Link to="/">Deadlines</Link>
                 <nav>
                     {!user && (
                     <div>
-                        <Link to='/signup'>Signup</Link>
-                        <Link to='/login'>Login</Link>
+                        <Link to='/signup'><strong>Signup</strong></Link>
+                        <Link to='/login'><strong>Login</strong></Link>
                     </div>
                     )}
                     {user && (
                     <div>
-                        <span>{user.email}</span>
-                        <button onClick={handleClick}>Log Out</button>
+                        <span className="nav-organize"><strong>Logged in as: <span class="make-red">{user.email}</span></strong></span>
+                        <button onClick={handleClick} className="nav-organize-2"><strong>Log Out</strong></button>
                     </div>
                     )}
                 </nav>

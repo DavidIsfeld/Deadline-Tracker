@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { useDeadlineContext } from '../hooks/useDeadlineContext';
 import { useAuthContext } from '../hooks/useAuthContext';
+import { Link } from 'react-router-dom';
 
 const UpdateDeadline = () => {
     const { dispatch } = useDeadlineContext();
@@ -83,8 +84,9 @@ const UpdateDeadline = () => {
         }
     };
 
-    return ( 
+    return (
         <form className="create-deadline-form" onSubmit={handleSubmit}>
+            <Link to="/">Return</Link>
             <h3>Update Deadline</h3>
 
             <label>Deadline Title</label>

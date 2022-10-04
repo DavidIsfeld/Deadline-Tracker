@@ -38,7 +38,7 @@ const DeadlineDetails = ( { deadline } ) => {
             <h3>Deadline: <span class="details-wrap-text">{deadline.title}</span></h3>
             <p><strong>Description:</strong><br /><span class="details-wrap-text">{deadline.description}</span></p>
             <p><strong>Deadline: </strong>{format(new Date(deadline.date), 'MMMM d, yyyy')}</p>
-            <p><strong>Time Until Deadline: <span id="details-time-left">{formatDistanceToNow(new Date(deadline.date), { addSuffix: true })}</span></strong></p>
+            <p><strong>Time Until Deadline: <span class="make-red">{formatDistanceToNow(new Date(deadline.date), { addSuffix: true })}</span></strong></p>
             <p><strong>Date Deadline Was Created: </strong>{formatDistanceToNow(new Date(deadline.createdAt), { addSuffix: true })}</p>
             <Link to="/update" state={{ oldDeadline: deadline}} id="details-link">Update Deadline</Link>
             <br />
