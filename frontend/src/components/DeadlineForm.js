@@ -60,26 +60,27 @@ const DeadlineForm = () => {
         <form className="create-deadline-form" onSubmit={handleSubmit}>
             <h3>Add a New Deadline</h3>
 
-            <label>Deadline Title</label>
+            <label>Deadline Title:</label>
             <input
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
             />
             
-            <label>Deadline Description</label>
-            <textarea onChange={(e) => setDescription(e.target.value)} value={description}>
+            <label>Deadline Description:</label>
+            <textarea onChange={(e) => setDescription(e.target.value)} value={description} className="form-text-area">
             </textarea>
 
-            <label>Deadline Date</label>
+            <label>Deadline Date:</label>
             <input
                 type="date"
                 onChange={(e) => setDate(e.target.value)}
                 value={date}
             />
 
+            <br />
             <button>Add Deadline</button>
-            {error && <div>{error}</div>}
+            {error && <div className="form-error">{error}</div>}
         </form>
      );
 }

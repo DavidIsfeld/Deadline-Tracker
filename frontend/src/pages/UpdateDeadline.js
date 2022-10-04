@@ -86,29 +86,31 @@ const UpdateDeadline = () => {
 
     return (
         <form className="create-deadline-form" onSubmit={handleSubmit}>
-            <Link to="/">Return</Link>
             <h3>Update Deadline</h3>
 
-            <label>Deadline Title</label>
+            <label>Deadline Title:</label>
             <input
                 type="text"
                 onChange={(e) => setTitle(e.target.value)}
                 value={title}
             />
             
-            <label>Deadline Description</label>
-            <textarea onChange={(e) => setDescription(e.target.value)} value={description}>
+            <label>Deadline Description:</label>
+            <textarea onChange={(e) => setDescription(e.target.value)} value={description} className="form-text-area">
             </textarea>
 
-            <label>Deadline Date</label>
+            <label>Deadline Date:</label>
             <input
                 type="date"
                 onChange={(e) => setDate(e.target.value)}
                 value={date}
             />
 
+            <br />
             <button>Update Deadline</button>
-            {error && <div>{error}</div>}
+            {error && <div className="form-error">{error}</div>}
+            <br /><br />
+            <Link to="/" id="return-update-link"><strong>Return</strong></Link>
         </form>
      );
 }
