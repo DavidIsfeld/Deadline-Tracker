@@ -75,3 +75,7 @@ body {
 #details-button:hover {
   background-color: rgb(198, 183, 183);
 }
+
+.details-wrap-text {
+  word-break: break-all;
+}
