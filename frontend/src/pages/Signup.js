@@ -35,7 +35,7 @@ const Signup = () => {
             />
 
             <button disabled={isLoading} className="login-signup-button">Sign Up</button>
-            {error && <div className="login-singup-error">{error}</div>}
+            {error && <div className="login-singup-error"><span className="make-red"><strong>{error}</strong></span></div>}
             <p className="copyright">Copyright (c) 2022 David Isfeld</p>
         </form>
      );

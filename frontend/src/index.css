@@ -151,6 +151,11 @@ nav button:hover {
   padding-top: 1em;
 }
 
+.create-deadline-form h4 {
+  padding-left: 0.9em;
+  padding-top: 1em;
+}
+
 .form-text-area {
   margin-left: 1.1em;
   position: relative;

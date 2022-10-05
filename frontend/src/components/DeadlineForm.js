@@ -81,7 +81,7 @@ const DeadlineForm = () => {
 
             <br />
             <button>Add Deadline</button>
-            {error && <div className="form-error">{error}</div>}
+            {error && <div className="form-error"><span className="make-red"><strong>{error}</strong></span></div>}
         </form>
      );
 }

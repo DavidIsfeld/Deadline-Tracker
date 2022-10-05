@@ -87,8 +87,8 @@ const UpdateDeadline = () => {
 
     return (
         <form className="create-deadline-form" onSubmit={handleSubmit}>
-            <h3>Update Deadline</h3>
-
+            <h3>Update Deadline: <span className="make-red">{oldDeadline.title}</span></h3>
+            <h4>(Information entered in will replace old info. Fields that are left blank will not be changed.)</h4>
             <label>Deadline Title:</label>
             <input
                 type="text"
@@ -109,7 +109,7 @@ const UpdateDeadline = () => {
 
             <br />
             <button>Update Deadline</button>
-            {error && <div className="form-error">{error}</div>}
+            {error && <div className="form-error"><span className="make-red"><strong>{error}</strong></span></div>}
             <br /><br />
             <Link to="/" id="return-update-link"><strong>Return</strong></Link>
             <p className="copyright">Copyright (c) 2022 David Isfeld</p>
