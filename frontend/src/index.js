@@ -1,4 +1,5 @@
 // Copyright (c) 2022 David Isfeld
+// this is the root file of the frontend.
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';

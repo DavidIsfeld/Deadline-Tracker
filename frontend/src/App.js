@@ -1,4 +1,5 @@
 // Copyright (c) 2022 David Isfeld
+// this is the root component displayed in the react application.
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import Home from './pages/Home';

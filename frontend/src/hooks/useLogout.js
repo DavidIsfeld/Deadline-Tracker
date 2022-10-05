@@ -1,4 +1,5 @@
 // Copyright (c) 2022 David Isfeld
+// this file contains a hook used to log out the user, by deleting the token stored in their browser and setting the user and deadlines contexts to null.
 
 import { useAuthContext } from './useAuthContext';
 import { useDeadlineContext } from './useDeadlineContext';

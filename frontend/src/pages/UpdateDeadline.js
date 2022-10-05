@@ -1,5 +1,5 @@
 // Copyright (c) 2022 David Isfeld
-// This component deals with updating a single deadline
+// This page deals with updating a single deadline
 
 import { useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';

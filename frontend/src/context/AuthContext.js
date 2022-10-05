@@ -1,4 +1,5 @@
 // Copyright (c) 2022 David Isfeld
+// this file stores the logged in user as a context so properties of the user can be accessed in other parts of the program.
 
 import { createContext, useReducer, useEffect } from 'react';
 

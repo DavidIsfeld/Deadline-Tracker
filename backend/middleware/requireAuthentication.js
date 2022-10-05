@@ -1,4 +1,6 @@
 // Copyright (c) 2022 David Isfeld
+// this file checks the token that a user tries to log in with and makes sure that it is correct.
+// it also attaches the user's id in the mongodb database to the request object.
 
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
