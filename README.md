@@ -1,5 +1,5 @@
 # Deadline Tracker
-Basic webapp for keeping track of deadlines made using MERN (MongoDB, Express.js React.js, Node.js).
+Basic webapp for keeping track of deadlines made using MERN (MongoDB, Express.js, React.js, and Node.js).
 
 This project is close to being finished, but is not quite ready to be hosted on a website yet.
 
