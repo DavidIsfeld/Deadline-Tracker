@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this hook will contain the logic used to log in a user in from the frontend
 
 import { useState } from 'react';

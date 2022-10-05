@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this file contains the logic that handles requests concerning deadlines
 
 const Deadline = require('../models/deadlineModel');

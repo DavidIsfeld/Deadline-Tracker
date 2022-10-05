@@ -1,3 +1,5 @@
+// Copyright (c) 2022 David Isfeld
+
 import { useAuthContext } from './useAuthContext';
 import { useDeadlineContext } from './useDeadlineContext';
 

@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this file routes requests related to the user to their appropriate controller functions
 
 const express = require('express');

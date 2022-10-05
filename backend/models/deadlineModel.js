@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this file contains the model of a deadline stored in a mongodb database using mongoose.
 
 const mongoose = require('mongoose');

@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this hook will contain the logic used to sign up a user in from the frontend
 
 import { useState } from 'react';

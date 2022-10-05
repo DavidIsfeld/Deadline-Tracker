@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // This component deals with updating a single deadline
 
 import { useState } from 'react';

@@ -1,3 +1,5 @@
+// Copyright (c) 2022 David Isfeld
+
 import { createContext, useReducer } from 'react';
 
 export const DeadlineContext = createContext();

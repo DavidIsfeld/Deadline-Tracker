@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this file contains the sign up page, which consists of a form the user fills in
 
 import { useState } from 'react';

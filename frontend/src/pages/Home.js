@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this file contains the home page, which is the first page users are brought to when they access the web app
 
 import { useEffect } from 'react';

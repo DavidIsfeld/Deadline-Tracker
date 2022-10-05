@@ -1,3 +1,4 @@
+// Copyright (c) 2022 David Isfeld
 // this is the root file of the backend
 
 // sensitive information is stored inside of a .env file within the backend folder.

@@ -1,3 +1,5 @@
+// Copyright (c) 2022 David Isfeld
+
 const jwt = require('jsonwebtoken');
 const User = require('../models/userModel');
 

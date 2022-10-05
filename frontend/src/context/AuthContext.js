@@ -1,3 +1,5 @@
+// Copyright (c) 2022 David Isfeld
+
 import { createContext, useReducer, useEffect } from 'react';
 
 export const AuthContext = createContext();
