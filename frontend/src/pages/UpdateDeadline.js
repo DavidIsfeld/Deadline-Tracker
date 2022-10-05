@@ -111,6 +111,7 @@ const UpdateDeadline = () => {
             {error && <div className="form-error">{error}</div>}
             <br /><br />
             <Link to="/" id="return-update-link"><strong>Return</strong></Link>
+            <p className="copyright">Copyright (c) 2022 David Isfeld</p>
         </form>
      );
 }

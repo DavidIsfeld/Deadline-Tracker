@@ -43,6 +43,7 @@ const Home = () => {
                 ))}
             </div>
             <DeadlineForm />
+            <p className="copyright">Copyright (c) 2022 David Isfeld</p>
         </div>
      );
 };

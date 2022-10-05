@@ -35,6 +35,7 @@ const Login = () => {
 
             <button disabled={isLoading} className="login-signup-button">Log In</button>
             {error && <div className="login-singup-error">{error}</div>}
+            <p className="copyright">Copyright (c) 2022 David Isfeld</p>
         </form>
      );
 };
