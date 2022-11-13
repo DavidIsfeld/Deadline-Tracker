@@ -20,7 +20,7 @@ app.use('/api/user', userRoutes);
 app.use('/api/deadline', deadlineRoutes);
 
 // connect to the database before the server starts listening to a certain port
-mongoose.connect(process.env.MONG_URI)
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
     // listen to requests from a certain port
     app.listen(process.env.PORT, () => {
