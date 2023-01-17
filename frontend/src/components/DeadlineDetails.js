@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // this file displays the information contained within each deadline
 
 import { useDeadlineContext } from '../hooks/useDeadlineContext';

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // this file contains the code for the navigation bar at the top of the website
 
 import { Link } from 'react-router-dom';

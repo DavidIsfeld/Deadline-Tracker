@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // use this hook to get to DeadlineContext so it is not used outside of DeadlineContextProvider
 
 import { DeadlineContext } from '../context/DeadlineContext';

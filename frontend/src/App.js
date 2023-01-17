@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // this is the root component displayed in the react application.
 
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';

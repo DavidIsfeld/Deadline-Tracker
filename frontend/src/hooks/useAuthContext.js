@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // use this hook to get to AuthContext so it is not used outside of AuthContextProvider
 
 import { AuthContext } from '../context/AuthContext';

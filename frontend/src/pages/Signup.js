@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // this file contains the sign up page, which consists of a form the user fills in
 
 import { useState } from 'react';
@@ -36,7 +36,8 @@ const Signup = () => {
 
             <button disabled={isLoading} className="login-signup-button">Sign Up</button>
             {error && <div className="login-singup-error"><span className="make-red"><strong>{error}</strong></span></div>}
-            <p className="copyright">Copyright (c) 2022 David Isfeld</p>
+            <p className="copyright">Feel free to use a fake email as I currently do not check if emails are valid</p>
+            <p className="copyright">Copyright (c) 2023 David Isfeld</p>
         </form>
      );
 };

@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // This page deals with updating a single deadline
 
 import { useState } from 'react';
@@ -112,7 +112,7 @@ const UpdateDeadline = () => {
             {error && <div className="form-error"><span className="make-red"><strong>{error}</strong></span></div>}
             <br /><br />
             <Link to="/" id="return-update-link"><strong>Return</strong></Link>
-            <p className="copyright">Copyright (c) 2022 David Isfeld</p>
+            <p className="copyright">Copyright (c) 2023 David Isfeld</p>
         </form>
      );
 }

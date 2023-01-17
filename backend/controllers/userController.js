@@ -1,4 +1,4 @@
-// Copyright (c) 2022 David Isfeld
+// Copyright (c) 2023 David Isfeld
 // this file contains functions that deal with requests related to user activities (logging in etc)
 
 const User = require('../models/userModel');
